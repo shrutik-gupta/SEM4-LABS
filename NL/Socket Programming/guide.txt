@@ -1,0 +1,46 @@
+#TCP socket programming:
+
+1. client-side scripting: (use try-catch blocks)
+	a. Create a Socket (soc)
+	b. take input from the user using BufferedReader (then read it in a variable str)
+	c. send the user input to the server using DataOutputStream (then write it to the server)
+	d. take result input back from the server using BufferedReader (then read it in a variable outputStr)
+	e. print the outputStr
+
+2. server-side scripting: (use try-catch blocks)
+	a. create a ServerSocket (ss)
+	b. initialize a while(true) loop
+	c. accept the server socket (ss) using Socket (soc)
+	d. take input from the client using BufferedReader (then read it in a variable str)
+	e. perform desired operations
+	f. send the result back to the client using DataOutputStream (then write it to the client)
+
+#UDP socket programming:
+
+1. client-side scripting: (use try-catch blocks)
+	a. create a DatagramSocket (soc)
+	b. take input from the user using BufferedReader (then read it in a variable str)
+	c. initialize byte variable (sendData), then read bytes from str and store it in the byte variable(sendData)
+	d. initialize InetAddress (IPAddr) (getLocalhost())
+	e. create a DatagramPacket (sendPacket) and pass attributes => (sendData, sendData.length,IPAddr,<PORT NUMBER>)
+	f. send packet to server using send method
+	g. initialize byte variable (receiveData)
+	h. create a DatagramPacket (receivePacket) and pass attributes => (receiveData, receiveData.length)
+	i. Receive packet from server using the receive method
+	j. Convert the received packet (byte) to string and store it in variable outputStr => pass attributes(receivePacket.getData(),0,receivePacket.getLength())
+	k. print the outputStr
+
+2. server-side scripting (use try-catch blocks)
+	a. create a DatagramSocket (soc) with <PORT NUMBER> (same as port number used in client side)
+	b. initialize a while(true) loop
+	c. initialize byte variable (receiveData)
+	d. create a DatagramPacket (receivePacket) and pass attributes => (receiveData, receiveData.length)
+	e. Receive packet from client using the receive method
+	f. Convert the received packet (byte) to string and store it in variable Str => pass attributes(receivePacket.getData(),0,receivePacket.getLength())
+	g. perform desired operations
+	h. initialize byte variable (sendData), then read bytes from str and store it in the byte variable(sendData)
+	i. initialize InetAddress (IPAddr) (receivePacket.getAddress())
+	j. initialize port number using getPort() method and store it in a variable(port)
+	k. create a DatagramPacket (sendPacket) and pass attributes => (sendData, sendData.length,IPAddr,port)
+	l. send packet to client using send method
+
