@@ -1,0 +1,24 @@
+Aim: Installation of NS2 and TCL Hello world
+On terminal:
+1. sudo apt-get install ns2
+2. ns
+3. sudo apt-get install nam
+4. sudo apt-get purge nam
+5. nam
+
+hello world program in text editor file:
+
+set ns [new Simulator]
+$ns at 1 "puts \"hello world\""
+$ns at 1.5 "exit"
+$ns run
+
+Output: at terminal – ns filename.tcl
+
+
+In this program, 
+set ns [new Simulator] # This line creates a new instance of the Simulator class and assigns it to the variable ns.
+$ns at 1 "puts \"hello world\"" # Schedules a command to print "hello world" at simulation time 1 second.
+$ns at 1.5 "exit" # Schedules a command to exit the simulation at time 1.5 seconds.
+$ns run # Starts the simulation.
+

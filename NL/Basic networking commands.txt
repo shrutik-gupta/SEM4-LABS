@@ -1,0 +1,145 @@
+Aim: Understanding Basic Networking Commands 
+1.1	ifconfig
+Used to view information about all network interfaces on your Linux system
+1.2	ifconfig -a
+To get info about both active and inactive network interfaces, run ifconfig with the -a option
+1.3	ifconfig -s
+Use the -s flag with ifconfig to display a concise summary of every active interface
+1.4	ifconfig -v
+As opposed to the -s flag, the verbose option (-v) prints a more detailed output. Depending on the system, the outcome is either the same as ifconfig without arguments or slightly more in-depth.
+1.5	ifconfig | grep inet
+The grep command is used to search for patterns in text. When you pipe the output of ifconfig to grep, it will search for all lines that contain the string "inet". This will print all of the IP addresses that are assigned to the system's interfaces.                                                                                                              
+2.1	ip address
+This option is used to show all IP addresses associated with all network devices.
+2.2	ip addr show enp3s0
+Use if we want to view the information of any particular interface
+2.3	ip link
+It is used to display link layer information
+2.4	ip -s link
+link option when used with -s option is used to show the statistics of the various network interfaces.      
+2.5	ip route
+This command helps you to see the route packets your network will take as set in your routing table. The first entry is the default route.
+3.1	traceroute 192.168.1.141
+tracks the path a packet takes from source to destination on an IP network
+3.2	traceroute  -4 google.com
+Use ip version 4 i.e. use IPv4
+3.3	traceroute -6 google.com
+use ip version 6 i.e. use IPv6
+3.4	traceroute -F google.com
+Do not fragment packet
+3.5	traceroute -m 5 google.com
+Set the max number of hops for the packet to reach the destination.Default value is 30.
+4.1	ping www.google.com
+To check your internet connection
+4.2	ping -c 2 www.geeksforgeeks.org
+used to define the number of packets to send to the server/host
+4.3	ping -w 3 www.geeksforgeeks.org 
+This command instructs the system to stop pinging the specified website after waiting for 3 seconds
+4.4	ping -f www.geeksforgeeks.org
+To flood a network with PING packets for testing network performance, use the `-f` option with the PING command.
+4.5	ping -s 40 www.geeksforgeeks.org 
+we can send light and heavy packet to host by using -s option.
+5.1	tracepath
+It will print the general syntax of the command along with the various options that can be used with the tracepath command as well as gives a brief description about each option.
+5.2	tracepath -n www.google.com
+This option prints primarily IP addresses numerically 	
+5.3	tracepath -b www.makemytrip.com
+This option print both of host names and IP addresses
+5.4	tracepath -m 31 www.google.com
+This option will set maximum hops (or maximum TTLs) to max_hops instead of 30
+5.5	tracepath -p 8080 www.google.com
+This option will set the initial destination port to use
+6.1	netstat
+generates displays that show network status and protocol statistics
+6.2	netstat -e
+displays Ethernet statistics, including the number of bytes and packets sent and received
+6.3	netstat -n
+displays network connections and listening ports in numerical format (IP addresses and port numbers) instead of resolving them to hostnames and service names.
+6.4	netstat -o
+displays active network connections and includes the process ID (PID) associated with each connection.
+6.5	netstat -r
+The -r option of netstat displays the IP routing table. Here is a sample display produced by netstat -r run on machine tenere.
+7.1	nslookup
+used for querying the Domain Name System (DNS) to obtain information about domain names, IP addresses, and related DNS records.
+7.2	nslookup www.google.com
+retrieve and display the IP address associated with the domain name "www.google.com" by querying the DNS.
+7.3	nslookup -q=mx www.google.com
+Initiates a DNS query specifically for Mail Exchange (MX) records. This will retrieve and display the mail servers responsible for handling email for the specified domain.
+7.4	nslookup -type=ns wikipedia.org
+This command queries the DNS for the authoritative Name Server (NS) records for the domain "example.com." 
+7.5	nslookup -type=any google.com
+Lookup for any record We can also view all the available DNS records using the -type=any option.
+8.1	route print
+display the current IP routing table.
+8.2	route print -6
+displays only the IPv6 routing table. This command provides information about IPv6 routes.
+8.3	route -F
+The ROUTE -F command is used in Windows to flush the IPv4 routing table. It clears all entries from the routing table, effectively removing all configured routes
+8.4	route -p
+manipulates network routing tables
+8.5	route delete 127.0.01
+used to remove a specific route from the routing table.
+9.1	hostname
+In Windows, running HOSTNAME in the command prompt will display the current hostname of the computer.
+9.2	echo %COMPUTERNAME%
+displays the name of the computer in uppercase
+9.3	set "_CLUSTER_NETWORK_NAME_=Shrutik_LAPTOP-6BJ1JG3N"
+To alter the hostname output
+10.1	curl www.google.com
+This command sends a GET request to "https://www.google.com" and displays the response on the terminal.
+
+
+10.2	curl -v https://www.google.com
+used to switch on verbose mode
+10.3	curl -vL https://www.google.com
+used to ask for both verbose mode and that curl follows HTTP redirects
+10.4	curl -A "shrutik gupta" https://www.google.com 
+used to pass on an argument to an option
+11.1	arp /a
+used to display the arp cache tables for all interfaces, type
+11.2	arp -s 192.168.1.2 ab:cd:ef:gh:ij:kl
+used to add a new entry to the ARP cache
+11.3	arp -d 192.168.1.2
+used to remove an entry from the ARP cache
+11.4	arp -v
+This option shows the verbose information.
+11.5	arp -H ether
+This tells arp which class of entries it should check for.
+12.1	whois tsec.edu
+WHOIS is used to query a database and retrieve information about the registration details of domain names, including ownership, registration and expiration dates, name servers, and contact information.
+12.2	whois -H tsec.edu
+When you use the ‘whois’ command, the output often includes legal disclaimers. If you want to hide these disclaimers, you can use the -H flag.
+12.3	whois -i tsec.edu
+By default, the ‘whois’ command is case-sensitive. However, you can make it case-insensitive by using the -i flag.
+12.4	whois -l tsec.edu
+If you’re writing a script and need the output of the ‘whois’ command to be on one line, you can use the -l flag.
+13.1	ss
+The output returns a list of open non-listening sockets with established connections.
+13.2	ss --all
+List all listening and non-listening connections with
+13.3	ss --listen
+used to display only listening sockets, which are omitted by default
+13.4	ss --tcp
+used to list TCP connections
+13.5	ss -udp
+used to show a list of UDP connections	
+14.1	dig redhat.com 
+When you pass a domain name to the dig command, by default it displays the A record
+14.2	dig redhat.com +noall +answer
++noanswer – Turn off the answer section
+14.3	dig redhat.com MX +noall +answer
+To query MX records, pass MX as an argument to the dig comman
+14.4	dig redhat.com NS +noall +answer
+To query the NS record use the type NS
+14.5	dig @ns1.redhat.com redhat.com
+By default dig uses the DNS servers defined in your /etc/resolv.conf file. If you like to use a different DNS server to perform the query, specify it in the command line as @dnsserver.
+15.1	mtr -t baeldung.com 	
+The -t option indicates we want to see the output in the curses-based terminal
+15.2	mtr -o ‘SA’ -t baeldung.com
+Suppose we are only interested in the Snt and Avg columns. We could launch mtr with the -o option.
+15.3	mtr -m 3 -t baeldung.com
+we can use the -m option to limit the nodes that we want to investigate.
+15.4	mtr -f 3 -t baeldung.com
+We can filter out the first two hops using the -f option.
+15.5	mtr -r baeldung.com
+we can let mtr do the job for a while and read the result later with the -r option.
