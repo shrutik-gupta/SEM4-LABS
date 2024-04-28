@@ -1,6 +1,6 @@
 set ns [new Simulator]
 
-set nf [open Topology.nam w]
+set nf [open topology.nam w]
 $ns namtrace-all $nf
 
 proc finish {} {
@@ -9,7 +9,7 @@ proc finish {} {
         #Close the NAM trace file
         close $nf
         #Execute NAM on the trace file        
-	exec nam Topology.nam &
+	exec nam topology.nam &
         exit 0
 }
 set n0 [$ns node]
