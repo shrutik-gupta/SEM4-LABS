@@ -1,0 +1,35 @@
+Aim: To Study file management Commands
+
+ls: List directory contents.
+cd: Change directory.
+pwd: Print working directory.
+mkdir: Make directories.
+rmdir: Remove empty directories.
+cp: Copy files and directories.
+mv: Move or rename files and directories.
+rm: Remove files or directories.
+touch: Create empty files or update file timestamps.
+cat: Concatenate and display file content.
+more: Display file content one screen at a time.
+less: Display file content with backward navigation support.
+head: Display the beginning of a file.
+tail: Display the end of a file.
+chmod: Change file permissions.
+chown: Change file owner and group.
+find: Search for files in a directory hierarchy.
+grep: Search for patterns in files.
+ln: Create links between files.
+du: Display disk usage of files and directories.
+df: Display disk space usage of file systems.
+tar: Archive files.
+gzip: Compress or decompress files using gzip compression.
+zip/unzip: Compress or decompress files using zip compression.
+file: Determine file type.
+basename: Strip directory and suffix from filenames.
+touch: Create empty files or update file timestamps.
+mv: move a file.
+cp: copy a file.
+rm: remove a file.
+wc: counts the number of lines, words and characters.
+type: Describe how its argument would be translated if used as commands
+cmp: compare two files byte by byte.

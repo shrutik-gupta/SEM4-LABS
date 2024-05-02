@@ -1,0 +1,34 @@
+Aim: To study process management commands.
+
+ps: Displays information about active processes.
+Example: ps aux
+
+top: Provides dynamic real-time view of running processes.
+Example: top
+
+kill: Terminates a process by ID or name.
+Example: kill PID
+
+killall: Kills processes by name.
+Example: killall firefox
+
+pgrep: Looks up processes based on name and other attributes.
+Example: pgrep ssh
+
+pkill: Sends signals to processes based on name.
+Example: pkill firefox
+
+xkill: Kills a process by clicking on the window by hovering on it after running this command.
+Example: xkill
+
+htop: Interactive process viewer similar to top but with more features.
+Example: htop
+
+pstree: Displays processes in a tree structure.
+Example: pstree
+
+nice: Runs a command with modified scheduling priority.
+Example: nice -n 10 command
+
+renice: Changes the priority of running processes.
+Example: renice +10 PID

@@ -1,0 +1,31 @@
+Aim: To study memory management commands.
+
+free: Displays amount of free and used memory in the system.
+Example: free -m
+
+top: Besides showing CPU usage, it also displays memory usage.
+Example: top
+
+vmstat: Reports virtual memory statistics.
+Example: vmstat
+
+pmap: Displays memory map of a process.
+Example: pmap PID
+
+smem: Provides detailed reports on memory usage.
+Example: smem -p
+
+swapoff: Disables swapping on a device.
+Example: swapoff /dev/sda2
+
+swapon: Enables swapping on a device.
+Example: swapon /dev/sda2
+
+sync: Flushes file system buffers.
+Example: sync
+
+sysctl: Manages kernel parameters at runtime.
+Example: sysctl -a
+
+/proc filesystem: Provides information about processes and memory usage.
+Example: cat /proc/meminfo

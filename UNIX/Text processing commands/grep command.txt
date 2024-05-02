@@ -1,0 +1,72 @@
+Aim: To study grep(global regular expression print) commands
+
+grep pattern file
+Searches for a pattern in a file.
+
+grep -i pattern file
+Ignores uppercase/lowercase of the pattern and the input files.
+
+grep -r pattern directory
+Searches for a pattern recursively in all files in a directory and subdirectory.
+
+grep -n pattern file
+Displays line numbers that contain the matching pattern.
+
+grep pattern file1 file2
+Displays both filenames and lines where the pattern is found.
+
+grep -l pattern file1 file2
+Displays only the filenames where the pattern is found.
+
+grep -h pattern file1 file2
+Displays only the lines containing the matching pattern.
+
+grep -v pattern file
+Displays lines that do not match the pattern.
+
+grep -c pattern file
+Counts the number of lines that match the pattern.
+
+grep -e pattern1 -e pattern2 file
+Searches for multiple patterns.
+
+grep -e pattern1 -e pattern2 file1 file2
+Searches for multiple patterns in multiple files.
+
+egrep "pattern1|pattern2|..." file
+Searches for multiple patterns (same as -e)
+
+grep -f keywords.txt file
+Searches for patterns in keywords.txt that is present in a given file 
+(use case - example- we cannot use -e if we want to search for 50 patterns, so we store those 50 patterns in a file 'keywords.txt' and use -f command to check if those 50 words are present in any xyz file)
+
+grep -E 'pattern' file
+Uses extended regular expressions (supports +, ?, () etc.).
+
+grep -w pattern file
+Matches only exact words.
+
+grep -R pattern directory
+Searches for all files except those matching the given pattern.
+
+grep -a pattern binaryfile
+Searches binary files as if they were text.
+
+grep 'pattern1.*pattern2' file
+Searches for lines matching multiple patterns (AND).
+
+grep '^pattern' file
+Searches for line that starts with the given pattern.
+
+grep 'pattern$' file
+Searches for line that ends with the given pattern.
+
+grep -q pattern file
+Searches without printing
+echo $? 
+To know if search successful or not
+OUTPUT - 0: search successful
+OUTPUT - 1: search unsuccessful
+
+grep pattern file1 > file2
+Move the lines containing that pattern to another file 

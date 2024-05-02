@@ -1,0 +1,20 @@
+Aim: To Study user management Commands
+
+who: display information about currently logged-in users.
+whoami: reveal the current username associated with the active user session.
+su: Allows you to switch to another user account. Syntax: su [options] [username]
+sudo: Executes commands as another user, usually the superuser.
+useradd: Used to create a new user account. Syntax: useradd [options] username
+userdel: Deletes a user account. Syntax: userdel [options] username
+usermod: Modifies an existing user account. Syntax: usermod [options] username
+passwd: Changes a user's password or sets password aging policies. Syntax: passwd [username]
+groupadd: Creates a new group. Syntax: groupadd [options] groupname
+groupdel: Deletes a group. Syntax: groupdel groupname
+groupmod: Modifies an existing group. Syntax: groupmod [options] groupname
+gpasswd: Manages group passwords. Syntax: gpasswd [options] groupname
+chage: Changes user password expiry information. Syntax: chage [options] username
+chsh: Changes the user's login shell. Syntax: chsh [options] username
+chfn: Changes user information. Syntax: chfn [options] username
+id: Displays user and group information for the specified user. Syntax: id [username]
+w: Shows who is logged in and what they are doing. Syntax: w [options]
+last: Shows a list of last logged in users. Syntax: last [options]

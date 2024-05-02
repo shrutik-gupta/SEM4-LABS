@@ -1,0 +1,69 @@
+Aim: To Study General Purpose Commands
+
+1. Echo
+syntax – echo “Hello world”
+
+2. Clear
+syntax – clear
+
+3. Exit
+syntax – exit
+
+4. Date
+syntax – date
+
+5. Time
+syntax – time <command name>
+example – time echo
+
+6. Uptime
+syntax – uptime
+
+7. Cal
+syntax – cal
+
+8. Cat
+syntax – cat <filename>
+example – cat shrutik
+
+9. tty
+syntax – tty
+
+10. man
+syntax – man <command name>
+example – man echo
+
+11. Which
+syntax – which <command name>
+example – which time
+
+12. History
+syntax – history
+
+13. id
+syntax – id
+
+14. pwd
+syntax – pwd
+
+15. whoami
+syntax – whoami
+
+16. ping
+syntax – ping <example.com>
+example – ping google.com
+
+17. ifconfig
+
+18. pr
+syntax – pr <file name>
+example – pr shrutik
+
+19. lp
+syntax – lp <file name>
+example – lp shrutik
+
+20. mail
+syntax - mail -s "Subject" user@example.com
+example – mail -s “Unix Assignment” shrutikgupta@gmail.com
+
