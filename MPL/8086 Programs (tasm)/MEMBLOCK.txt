@@ -1,0 +1,26 @@
+;AIM: Move set of numbers from one memory block to another
+
+DATA_SEG SEGMENT
+           SARR DB 43H,11H,22H,33H,44H
+           DARR DB 5 DUP(?)
+DATA_SEG ENDS
+
+CODE_SEG SEGMENT
+	ASSUME CS:CODE_SEG , DS:DATA_SEG
+START: MOV AX,DATA_SEG                 ; init data seg reg
+	MOV DS,AX
+
+	LEA SI,SARR
+	LEA DI,DARR
+	MOV CX,5 ;LOAD COUNTER
+NEXT:
+	MOV AL,[SI]                    ;READ SOURCE ARRAY ELEMENT
+	MOV [DI], AL
+	INC SI                         ;increment source ptr
+	INC DI                         ;increment destination ptr
+	LOOP NEXT                      ;decrement cx by 1 and jump if not 0
+	
+	MOV AH,4CH                     ;exit to dos
+	INT 21H
+CODE_SEG ENDS
+END START

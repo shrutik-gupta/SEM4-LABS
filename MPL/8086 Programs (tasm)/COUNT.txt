@@ -1,0 +1,29 @@
+;AIM: Count number of 1’s and 0’s in a given 8-bit number
+
+DATA_SEG SEGMENT
+           NUM1 DB 43H
+           ZEROS DB 0
+           ONES DB 0
+DATA_SEG ENDS
+
+CODE_SEG SEGMENT
+	ASSUME CS:CODE_SEG , DS:DATA_SEG
+START :  
+	MOV AX,DATA_SEG			;INIT DATA SEGMENT
+	MOV DS, AX
+	MOV AL, NUM1			;READ THE NUMBER           
+	MOV CX, 8 			;SET COUNTER TO 8
+BACK:         
+	ROR AL, 1
+	JC CARRY1
+	INC ZEROS
+	JMP EXIT 
+CARRY1: 
+	INC ONES
+EXIT:
+	LOOP BACK
+	
+	MOV AH, 4CH			;exit to dos
+	INT 21H
+CODE_SEG ENDS
+END START

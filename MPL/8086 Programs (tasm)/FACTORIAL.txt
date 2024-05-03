@@ -1,0 +1,26 @@
+;AIM: Compute factorial using procedure
+
+DATA_SEG SEGMENT
+    NUM  DW 5 ; Number for factorial calculation
+    FACT DW 0 ; Variable to store the factorial result
+DATA_SEG ENDS
+
+CODE_SEG SEGMENT
+    ASSUME CS: CODE_SEG, DS: DATA_SEG 
+    
+START:
+    MOV AX, DATA_SEG		; INITIALIZATION OF DATA SEGMENT
+    MOV DS, AX
+
+    ; FACTORIAL CALCULATION
+    MOV AX, 1			;Initialize AX with 1
+    MOV CX, NUM      		;Move the value of NUM into CX
+AGAIN:
+    MUL CX 			;Multiply AX by CX (NUM)
+    LOOPNZ AGAIN     		;Decrement CX and loop if CX is not zero
+    MOV [FACT], AX 		;Store the factorial result from AX to FACT
+
+    MOV AH, 4CH      		;Set AH to 4CH for exit
+    INT 21H 			;Call interrupt for DOS exit
+CODE_SEG ENDS
+END START

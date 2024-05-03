@@ -1,0 +1,30 @@
+;AIM: Assembly language program for 16 bit BCD addition
+
+DATA_SEG SEGMENT
+        NUM1 DW 4578H
+        NUM2 DW 8598H
+        CARRY DB 00H
+        SUM DW 0000H
+DATA_SEG ENDS
+
+CODE_SEG SEGMENT
+        ASSUME CS: CODE_SEG, DS: DATA_SEG
+START:
+        MOV AX, DATA_SEG
+        MOV DS, AX
+
+        MOV AX, NUM1
+        MOV BX, NUM2
+        ADD AL, BL
+        DAA
+        MOV DL, AL
+        MOV AL, AH
+        ADC AL, BH
+        DAA
+        MOV DH, AL
+        MOV SUM, DX
+
+        MOV AH, 4CH
+        INT 21H
+CODE_SEG ENDS
+END START
